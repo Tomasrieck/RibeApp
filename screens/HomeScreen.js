@@ -6,50 +6,44 @@ import { HomeIcon } from "../components/HomeIcon";
 
 export default function HomeScreen(props) {
   return (
-    <ImageBackground
-      source={require("../assets/background.jpg")}
-      resizeMode="cover"
-      style={styles.container}
-    >
-      <StatusBar translucent={true} />
+    <View style={styles.container}>
+      <StatusBar translucent={false} />
       <Header1 />
       <View style={styles.content}>
-        <View style={styles.imageCover}>
-          <View style={styles.homeIconRow}>
-            <HomeIcon
-              iconName="restaurant-outline"
-              color="rgb(43,150,246)"
-              title="Spisesteder"
-              to="RestaurantScreen"
-              {...props}
-            />
-            <HomeIcon
-              iconName="tennisball-outline"
-              color="rgb(202,61,61)"
-              title="Aktiviteter"
-              to="AktivitetScreen"
-              {...props}
-            />
-          </View>
-          <View style={styles.homeIconRow}>
-            <HomeIcon
-              iconName="image-outline"
-              color="rgb(43,150,246)"
-              title="Kultur"
-              to="KulturScreen"
-              {...props}
-            />
-            <HomeIcon
-              iconName="bed-outline"
-              color="rgb(202,61,61)"
-              title="Overnatning"
-              to="OvernatningScreen"
-              {...props}
-            />
-          </View>
+        <View style={styles.homeIconRow}>
+          <HomeIcon
+            iconName="restaurant-outline"
+            color="rgb(43,150,246)"
+            title="Spisesteder"
+            to="RestaurantScreen"
+            {...props}
+          />
+          <HomeIcon
+            iconName="tennisball-outline"
+            color="rgb(202,61,61)"
+            title="Aktiviteter"
+            to="AktivitetScreen"
+            {...props}
+          />
+        </View>
+        <View style={styles.homeIconRow}>
+          <HomeIcon
+            iconName="image-outline"
+            color="rgb(43,150,246)"
+            title="Kultur"
+            to="KulturScreen"
+            {...props}
+          />
+          <HomeIcon
+            iconName="bed-outline"
+            color="rgb(202,61,61)"
+            title="Overnatning"
+            to="OvernatningScreen"
+            {...props}
+          />
         </View>
       </View>
-    </ImageBackground>
+    </View>
   );
 }
 

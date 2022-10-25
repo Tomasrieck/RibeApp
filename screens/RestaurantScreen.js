@@ -91,7 +91,7 @@ Her byder Lise Frederiksen velkommen i en charmerende café, hvor der serveres a
 export default function RestaurantScreen(props) {
   return (
     <View style={styles.container}>
-      <StatusBar translucent={true} />
+      <StatusBar translucent={false} />
       <Header2 {...props} />
       <FlatList
         data={DATA}

@@ -28,7 +28,7 @@ export default function AboutScreen(props) {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent={true} />
+      <StatusBar translucent={false} />
       <Header2 {...props} />
       <ImageBackground
         source={props.route.params.image}
@@ -78,28 +78,24 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: "400",
-    fontFamily: "Times New Roman",
     color: "white",
     marginBottom: 4,
   },
   shortDesc: {
     fontSize: 18,
     fontWeight: "400",
-    fontFamily: "Times New Roman",
     color: "white",
     marginBottom: 4,
   },
   address: {
     fontSize: 18,
     fontWeight: "400",
-    fontFamily: "Times New Roman",
     color: "rgb(43,150,246)",
     marginBottom: 17,
   },
   longDesc: {
     fontSize: 16,
     fontWeight: "400",
-    fontFamily: "Times New Roman",
     color: "white",
   },
   map: {

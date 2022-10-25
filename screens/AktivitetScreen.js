@@ -43,7 +43,7 @@ const DATA = [
 export default function AktivitetScreen(props) {
   return (
     <View style={styles.container}>
-      <StatusBar translucent={true} />
+      <StatusBar translucent={false} />
       <Header2 {...props} />
       <FlatList
         data={DATA}

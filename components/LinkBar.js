@@ -33,13 +33,11 @@ const styles = StyleSheet.create({
   assetText1: {
     fontSize: 20,
     fontWeight: "400",
-    fontFamily: "Times New Roman",
     color: "white",
   },
   assetText2: {
     fontSize: 13,
     fontWeight: "400",
-    fontFamily: "Times New Roman",
     color: "white",
   },
 });
