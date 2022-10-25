@@ -1,10 +1,4 @@
-import React from "react";
-import { StyleSheet, StatusBar, View, FlatList, Pressable } from "react-native";
-
-import { Header2 } from "../components/Header";
-import { LinkBar } from "../components/LinkBar";
-
-const DATA = [
+export const SPISESTEDER = [
   {
     image: require("../assets/restauranter/Pinnochio.jpeg"),
     title: "Pinnochio",
@@ -87,48 +81,3 @@ Her byder Lise Frederiksen velkommen i en charmerende café, hvor der serveres a
     address: "Overdammen 7, 6760 Ribe",
   },
 ];
-
-export default function RestaurantScreen(props) {
-  return (
-    <View style={styles.container}>
-      <StatusBar translucent={false} />
-      <Header2 {...props} />
-      <FlatList
-        data={DATA}
-        renderItem={({ item, index }) => (
-          <Pressable
-            key={index.toString()}
-            onPress={() =>
-              props.navigation.navigate("AboutScreen", {
-                image: item.image,
-                title: item.title,
-                shortDesc: item.shortDesc,
-                longDesc: item.longDesc,
-                address: item.address,
-              })
-            }
-          >
-            <LinkBar
-              image={item.image}
-              title={item.title}
-              shortDesc={item.shortDesc}
-            />
-          </Pressable>
-        )}
-        style={styles.content}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  content: {
-    flex: 1,
-    width: "100%",
-  },
-});

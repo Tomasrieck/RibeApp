@@ -27,15 +27,15 @@ export default function AboutScreen(props) {
   }).start();
 
   return (
-    <View style={styles.container}>
-      <StatusBar translucent={false} />
-      <Header2 {...props} />
-      <ImageBackground
-        source={props.route.params.image}
-        resizeMode="cover"
-        style={styles.content}
-      >
-        <View style={styles.imageCover}>
+    <ImageBackground
+      style={styles.container}
+      source={props.route.params.image}
+      resizeMode="cover"
+    >
+      <View style={styles.imageCover}>
+        <StatusBar translucent={false} />
+        <Header2 {...props} />
+        <View style={styles.content}>
           <Animated.View style={[styles.infoField, { opacity: fadeAnim }]}>
             <Text style={styles.title}>{props.route.params.title},</Text>
             <Text style={styles.shortDesc}>{props.route.params.shortDesc}</Text>
@@ -45,8 +45,8 @@ export default function AboutScreen(props) {
             <Text style={styles.longDesc}>{props.route.params.longDesc}</Text>
           </Animated.View>
         </View>
-      </ImageBackground>
-    </View>
+      </View>
+    </ImageBackground>
   );
 }
 
@@ -59,6 +59,8 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
   imageCover: {
     top: 0,

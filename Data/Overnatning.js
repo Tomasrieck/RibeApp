@@ -1,10 +1,4 @@
-import React from "react";
-import { StyleSheet, StatusBar, View, FlatList, Pressable } from "react-native";
-
-import { Header2 } from "../components/Header";
-import { LinkBar } from "../components/LinkBar";
-
-const DATA = [
+export const OVERNATNING = [
   {
     image: require("../assets/overnatning/Dagmar.jpeg"),
     title: "Dagmar",
@@ -56,48 +50,3 @@ const DATA = [
     shortDesc: "Smuk restaurant og overnatning",
   },
 ];
-
-export default function OvernatningScreen(props) {
-  return (
-    <View style={styles.container}>
-      <StatusBar translucent={false} />
-      <Header2 {...props} />
-      <FlatList
-        data={DATA}
-        renderItem={({ item, index }) => (
-          <Pressable
-            key={index.toString()}
-            onPress={() =>
-              props.navigation.navigate("AboutScreen", {
-                image: item.image,
-                title: item.title,
-                shortDesc: item.shortDesc,
-                longDesc: item.longDesc,
-                address: item.address,
-              })
-            }
-          >
-            <LinkBar
-              image={item.image}
-              title={item.title}
-              shortDesc={item.shortDesc}
-            />
-          </Pressable>
-        )}
-        style={styles.content}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  content: {
-    flex: 1,
-    width: "100%",
-  },
-});

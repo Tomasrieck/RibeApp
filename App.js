@@ -3,11 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import HomeScreen from "./screens/HomeScreen";
-import RestaurantScreen from "./screens/RestaurantScreen";
-import AktivitetScreen from "./screens/AktivitetScreen";
-import KulturScreen from "./screens/KulturScreen";
-import OvernatningScreen from "./screens/OvernatningScreen";
 import AboutScreen from "./screens/AboutScreen";
+import CategoryScreen from "./screens/CategoryScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,29 +20,8 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="RestaurantScreen"
-          component={RestaurantScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="AktivitetScreen"
-          component={AktivitetScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="KulturScreen"
-          component={KulturScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="OvernatningScreen"
-          component={OvernatningScreen}
+          name="CategoryScreen"
+          component={CategoryScreen}
           options={{
             headerShown: false,
           }}

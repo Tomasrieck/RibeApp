@@ -46,10 +46,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    borderBottomWidth: 1,
   },
   title: {
-    fontFamily: "Papyrus",
     fontSize: 60,
     marginLeft: 25,
   },

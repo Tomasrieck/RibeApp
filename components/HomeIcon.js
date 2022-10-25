@@ -1,23 +1,20 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export const HomeIcon = (props) => {
   return (
-    <TouchableOpacity
-      style={[styles.container, { backgroundColor: props.color }]}
-      onPress={() => props.navigation.navigate(props.to)}
-    >
+    <View style={[styles.container, { backgroundColor: props.color }]}>
       <Ionicons name={props.iconName} size={35} color="white" />
       <Text style={styles.title}>{props.title}</Text>
-    </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: "40%",
-    height: "60%",
+    width: 165,
+    height: 160,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 25,

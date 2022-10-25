@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, StatusBar, View, ImageBackground } from "react-native";
+import { StyleSheet, StatusBar, View, TouchableOpacity } from "react-native";
 
 import { Header1 } from "../components/Header";
 import { HomeIcon } from "../components/HomeIcon";
@@ -11,36 +11,60 @@ export default function HomeScreen(props) {
       <Header1 />
       <View style={styles.content}>
         <View style={styles.homeIconRow}>
-          <HomeIcon
-            iconName="restaurant-outline"
-            color="rgb(43,150,246)"
-            title="Spisesteder"
-            to="RestaurantScreen"
-            {...props}
-          />
-          <HomeIcon
-            iconName="tennisball-outline"
-            color="rgb(202,61,61)"
-            title="Aktiviteter"
-            to="AktivitetScreen"
-            {...props}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              props.navigation.navigate("CategoryScreen", {
+                category: "Spisesteder",
+              })
+            }
+          >
+            <HomeIcon
+              iconName="restaurant-outline"
+              color="rgb(43,150,246)"
+              title="Spisesteder"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              props.navigation.navigate("CategoryScreen", {
+                category: "Kultur",
+              })
+            }
+          >
+            <HomeIcon
+              iconName="image-outline"
+              color="rgb(202,61,61)"
+              title="Kultur"
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.homeIconRow}>
-          <HomeIcon
-            iconName="image-outline"
-            color="rgb(43,150,246)"
-            title="Kultur"
-            to="KulturScreen"
-            {...props}
-          />
-          <HomeIcon
-            iconName="bed-outline"
-            color="rgb(202,61,61)"
-            title="Overnatning"
-            to="OvernatningScreen"
-            {...props}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              props.navigation.navigate("CategoryScreen", {
+                category: "Aktiviteter",
+              })
+            }
+          >
+            <HomeIcon
+              iconName="tennisball-outline"
+              color="rgb(43,150,246)"
+              title="Aktiviteter"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              props.navigation.navigate("CategoryScreen", {
+                category: "Overnatning",
+              })
+            }
+          >
+            <HomeIcon
+              iconName="bed-outline"
+              color="rgb(202,61,61)"
+              title="Overnatning"
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -57,16 +81,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     justifyContent: "center",
-  },
-  imageCover: {
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
-    zIndex: 1,
-    justifyContent: "center",
-    backgroundColor: "rgba(0,0,0,0.1)",
   },
   homeIconRow: {
     flex: 0.35,

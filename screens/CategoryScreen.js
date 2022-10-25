@@ -1,46 +1,25 @@
 import React from "react";
-import {
-  StyleSheet,
-  StatusBar,
-  View,
-  Image,
-  FlatList,
-  Text,
-  Pressable,
-} from "react-native";
+import { StyleSheet, StatusBar, View, FlatList, Pressable } from "react-native";
 
 import { Header2 } from "../components/Header";
 import { LinkBar } from "../components/LinkBar";
 
-const DATA = [
-  {
-    image: require("../assets/aktiviteter/Legeplads.jpeg"),
-    title: "Legeplads",
-    shortDesc: "Danmarks længste legeplads",
-  },
-  {
-    image: require("../assets/aktiviteter/Padel.jpeg"),
-    title: "Padel",
-    shortDesc: "To padeltennisbaner til hele familien",
-  },
-  {
-    image: require("../assets/aktiviteter/Storkesøen.jpeg"),
-    title: "Storkesøen",
-    shortDesc: "Put-and-take-sø",
-  },
-  {
-    image: require("../assets/aktiviteter/Svømmehal.jpeg"),
-    title: "Ribe Svømmebad",
-    shortDesc: "Ribes egen svømmehal",
-  },
-  {
-    image: require("../assets/aktiviteter/ØstersSafari.jpeg"),
-    title: "Østerssafari",
-    shortDesc: "Tag på østersafari uden for sommermånederne",
-  },
-];
+import { SPISESTEDER } from "../Data/Spisesteder";
+import { AKTIVITETER } from "../Data/Aktiviteter";
+import { KULTUR } from "../Data/Kultur";
+import { OVERNATNING } from "../Data/Overnatning";
 
-export default function AktivitetScreen(props) {
+export default function RestaurantScreen(props) {
+  if (props.route.params.category == "Spisesteder") {
+    var DATA = SPISESTEDER;
+  } else if (props.route.params.category == "Aktiviteter") {
+    var DATA = AKTIVITETER;
+  } else if (props.route.params.category == "Kultur") {
+    var DATA = KULTUR;
+  } else {
+    var DATA = OVERNATNING;
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar translucent={false} />
